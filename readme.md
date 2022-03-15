@@ -1,6 +1,6 @@
 **Drafts for web scraping project**
 
-El fitxer xkcd.py és un experiment que faig escriure per començar
+El fitxer xkcd.py és un petit experiment que he escrit per començar
 a practicar web scraping. El fitxer extreu el missatge flotant que apareix a la 
 pàgina de xkcd.com quan deixem el cursor a sobre de la imatge. Funciona per a qualsevol 
 de les pàgines de xkcd, només cal canviar la url 'https://xkcd.com', que ens porta 
