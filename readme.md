@@ -1,5 +1,8 @@
 **Drafts for web scraping project**
 
+**xkcd.py**
+
+
 El fitxer xkcd.py és un petit experiment que he escrit per començar
 a practicar web scraping. El fitxer extreu el missatge flotant que apareix a la 
 pàgina de xkcd.com quan deixem el cursor a sobre de la imatge. Funciona per a qualsevol 
@@ -10,9 +13,14 @@ XKCD és un webcomic que fa molt de temps que segueixo, el trobo molt divertit. 
 un humor molt enginyós i surrealista, i el missatge flotant que sempre apareix a
 cada imatge sempre és fins i tot més surrealista...
 
-Una possible complexificació del codi podria consistir a, per exemple, permetre una cerca
-de missatges flotants entre dues dates diferents, obtenint un diccionari amb
-dates i els continguts respectius dels missatges flotants, o fins i tot un 
-dataframe amb més camps (missatge flotant + data + títol del còmic + link de la imatge del 
-comic + ...)
+**xkcd2.py**
 
+Aquest segon fitxer és una complexificació del primer, la diferència és
+que aquest extreu diversos missatges flotants d'un rang de pàgines publicades 
+consecutivament. Tècnicament, entra a diverses pàgines del mateix lloc web.
+Des d'aquí, fàcilment (crec) es podria extreure altres elements de les mateixes
+pàgines per crear un diccionari o dataframe. El dataset resultant podria
+incloure, per exemple, títol del còmic, enllaç a la imatge del còmic,
+missatge flotant... tot per un nombre de pàgines a definir, per exemple,
+les últimes 30 pàgines publicades en relació a la data en que s'executa 
+el fitxer.
