@@ -1,6 +1,4 @@
 
--Crear repositori GitHub compartit
-
 -Decidir web i dataset
 
 -Obrir compte a Zenodo
