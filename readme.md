@@ -1,6 +1,6 @@
-#**Possibles webs i datasets**
+# **Possibles webs i datasets**
 
-##**Paràmetres a avaluar per tal de fer la tria:**
+## **Paràmetres a avaluar per tal de fer la tria:**
 (podem afegir paràmetres si cal...)
 
 -La web ofereix una api (oficial)?
@@ -15,14 +15,14 @@
 
 -----
 
-##xkcd.com
+## xkcd.com
 
 Crec que podem descartar xkcd, ja que la mateixa web ofereix una api amb tota
 la informació que puc inaginar que podríem extreure.
 
 -----
 
-##La Liga
+## La Liga
 
 Web: https://www.laliga.com/estadisticas
 
@@ -49,9 +49,11 @@ Potser la temàtica és una mica avorrida, però les possibilitats de fer
 scraping les trobo bastant idònies (incloent imatges i solució
 pel crawl-delay). Cada cap de setmana la llista canvia (si hi ha gols
 en els partits), i això dóna un sentit dinàmic al projecte.
+
+
 -----
 
-##Mercat de les flors
+## Mercat de les flors
 
 Web: https://mercatflors.cat/blog
 
