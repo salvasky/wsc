@@ -1,26 +1,83 @@
-**Drafts for web scraping project**
+#**Possibles webs i datasets**
 
-**xkcd.py**
+##**Paràmetres a avaluar per tal de fer la tria:**
+(podem afegir paràmetres si cal...)
 
+-La web ofereix una api (oficial)?
 
-El fitxer xkcd.py és un petit experiment que he escrit per començar
-a practicar web scraping. El fitxer extreu el missatge flotant que apareix a la 
-pàgina de xkcd.com quan deixem el cursor a sobre de la imatge. Funciona per a qualsevol 
-de les pàgines de xkcd, només cal canviar la url 'https://xkcd.com', que ens porta 
-a la imatge més recent, per una d'anterior, per exemple 'https://xkcd.com/2592/'
+-Hi ha un document robots.txt?
 
-XKCD és un webcomic que fa molt de temps que segueixo, el trobo molt divertit. Té
-un humor molt enginyós i surrealista, i el missatge flotant que sempre apareix a
-cada imatge sempre és fins i tot més surrealista...
+-Requereix usuari i/o contrasenya?
 
-**xkcd2.py**
+-Hi ha restriccions de scraping?
 
-Aquest segon fitxer és una complexificació del primer, la diferència és
-que aquest extreu diversos missatges flotants d'un rang de pàgines publicades 
-consecutivament. Tècnicament, entra a diverses pàgines del mateix lloc web.
-Des d'aquí, fàcilment (crec) es podria extreure altres elements de les mateixes
-pàgines per crear un diccionari o dataframe. El dataset resultant podria
-incloure, per exemple, títol del còmic, enllaç a la imatge del còmic,
-missatge flotant... tot per un nombre de pàgines a definir, per exemple,
-les últimes 30 pàgines publicades en relació a la data en que s'executa 
-el fitxer.
+-Ofereix la possibilitat d'incloure contingut audiovisual?
+
+-----
+
+##xkcd.com
+
+Crec que podem descartar xkcd, ja que la mateixa web ofereix una api amb tota
+la informació que puc inaginar que podríem extreure.
+
+-----
+
+##La Liga
+
+Web: https://www.laliga.com/estadisticas
+
+Possible Dataset: Dades actuals dels 10 màxims golejadors de la lliga, incloent
+foto, imatge d'escut de l'equip, gols (per partit), etc.
+
+-La web ofereix una api (oficial)?
+No. N'hi ha un parell de no oficials, però que no generen el mateix
+dataset que aquí proposo.
+
+-Hi ha un document robots.txt?
+Sí, força extens.
+
+-Requereix usuari i/o contrasenya?
+No
+
+-Hi ha restriccions de scraping? Es demana un crawl-delay de 30s
+
+-Ofereix la possibilitat d'incloure contingut audiovisual?
+Sí, fotos dels jugadors, imatge d'escut de l'equip...
+
+Comentaris:
+Potser la temàtica és una mica avorrida, però les possibilitats de fer 
+scraping les trobo bastant idònies (incloent imatges i solució
+pel crawl-delay). Cada cap de setmana la llista canvia (si hi ha gols
+en els partits), i això dóna un sentit dinàmic al projecte.
+-----
+
+##Mercat de les flors
+
+Web: https://mercatflors.cat/blog
+
+Dataset: llista d'articles escrits per un autor concret, incloent 
+data de publicació, foto relacionada amb l'article, nom de l'artista relacionat
+, etc.
+
+-La web ofereix una api (oficial)?
+No
+
+-Hi ha un document robots.txt?
+Sí, molt genèric, permet accés total.
+
+-Requereix usuari i/o contrasenya?
+No.
+
+-Hi ha restriccions de scraping?
+No ho sembla.
+
+-Ofereix la possibilitat d'incloure contingut audiovisual?
+Sí, fotos dels espectacles lligats a cada article.
+
+Comentaris:
+Sóc molt proper a la temàtica, m'interessa el material, i potser 
+ens podem inspirar en el codi que ja has escrit en relació al wordpress(?).
+No sé si ofereix tantes possibilitats de generar un dataset adient comparat amb 
+La Liga... Es poden mirar altres opcions en blogs similars...
+
+-----
