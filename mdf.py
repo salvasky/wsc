@@ -42,6 +42,7 @@ while True:
 
 soup_inf = BeautifulSoup(driver.page_source, 'html.parser')
 # soup = BeautifulSoup(driver.page_source, 'lxml')
+# html parser ha funcionat
 
 with open("test_inf.html", 'w') as f:
     f.write(soup_inf.prettify())
