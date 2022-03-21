@@ -44,5 +44,22 @@ soup_inf = BeautifulSoup(driver.page_source, 'html.parser')
 # soup = BeautifulSoup(driver.page_source, 'lxml')
 # html parser ha funcionat
 
-with open("test_inf.html", 'w') as f:
-    f.write(soup_inf.prettify())
+# with open("test_inf.html", 'w') as f:
+#     f.write(soup_inf.prettify())
+
+# Cada entrada al blog va delimitada pels tags <article> i disposa de la seva url
+# Recollir totes les URLs, accedir-hi una a una i extreure la informació d'interès
+soup_body = soup_inf.body
+
+titols = []
+links = []
+dates = []
+
+for article in soup_body.find_all('article'):
+    tag = article.find('a')
+    titols.append(tag.string)
+    links.append(tag['href'])
+    dates.append(article.find('time')['datetime'])
+
+# Prova d'impressió de titols de posts
+print(dates)
