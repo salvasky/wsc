@@ -61,5 +61,5 @@ for article in soup_body.find_all('article'):
     links.append(tag['href'])
     dates.append(article.find('time')['datetime'])
 
-# Prova d'impressió de titols de posts
+# Prova d'impressió de les dates dels posts
 print(dates)
