@@ -13,6 +13,8 @@
 
 -Ofereix la possibilitat d'incloure contingut audiovisual?
 
+-Inspiració (punt 7 enunuciat)
+
 -----
 
 ## xkcd.com
@@ -22,33 +24,50 @@ la informació que puc inaginar que podríem extreure.
 
 -----
 
-## La Liga
+## Meteomuntanya
 
-Web: https://www.laliga.com/estadisticas
+Web: http://meteomuntanya.cat/prediccio_muntanya/
 
-Possible Dataset: Dades actuals dels 10 màxims golejadors de la lliga, incloent
-foto, imatge d'escut de l'equip, gols (per partit), etc.
+Possible Dataset: Recull de dades presents a la pàgina: avisos destacats de seguretat (inclosa icona, títol
+i text explicatiu), mapa de predicció general (emmagatzemar la imatge) i mapa d'avisos (emmagatzemar la imatge
+i possiblement identificar els avisos activats)
 
 -La web ofereix una api (oficial)?
-No. N'hi ha un parell de no oficials, però que no generen el mateix
-dataset que aquí proposo.
+Meteomuntanya obté les dades de meteo.cat, i aquesta té una rest api molt sofisticada, 
+però en canvi la informació d'aquesta pàgina en concret
+no sembla accessible a través de l'api. Sembla justificat doncs optar per l'scraping per 
+aquesta pàgina i aquestes dades concretes.
 
 -Hi ha un document robots.txt?
-Sí, força extens.
+http://meteomuntanya.cat/robots.txt
 
 -Requereix usuari i/o contrasenya?
 No
 
--Hi ha restriccions de scraping? Es demana un crawl-delay de 30s
+-Hi ha restriccions de scraping? No explícites (però podem incloure request-delay)
 
 -Ofereix la possibilitat d'incloure contingut audiovisual?
-Sí, fotos dels jugadors, imatge d'escut de l'equip...
+Sí, mapes i icones.
+
+-Inspiració (punt 7 enunuciat)
+Pel que veig, aquesta pàgina s'actualitza cada 3 dies aproximadament, i no hi ha cap enllaç a 
+l'històric de prediccions. Per tant, un primer interès del projecte seria que
+el dataset generat ofereix la possibilitat
+de construir un magatzem històric de prediccions, és a dir, fer l'scraping seria 
+una forma d'emmagatzemar (la informació bàsica de) les prediccions (en un format 
+organitzat i condensat). 
+
+D'altra banda, el dataset generat permetria 
+presentar una versió més condensada de la informació present a la pàgina web (reduint-la als
+avisos de seguretat i mapes, prescindint del text explicatiu). Si imaginem que tenim un negoci
+a la muntanya (hostal, botiga de lloguer de material, guia d'activitats), aquesta informació
+sintetitzada es podria adquirir de forma automàtica cada tres dies amb l'script que generem per
+imprimir-ho, emmagatzemar-ho, incloure-ho a la pàgina web pròpia, newsletters, etc.
+
 
 Comentaris:
-Potser la temàtica és una mica avorrida, però les possibilitats de fer 
-scraping les trobo bastant idònies (incloent imatges i solució
-pel crawl-delay). Cada cap de setmana la llista canvia (si hi ha gols
-en els partits), i això dóna un sentit dinàmic al projecte.
+No he fet cap prova de codi, però hauria de ser possible extreure la informació que ens interessa. 
+Crec que els mapes i icones presenten un repte interessant.
 
 
 -----
