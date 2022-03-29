@@ -28,6 +28,9 @@ with open('test_mdf_confi.html', 'w') as f:
 # https://github.com/LimonSafayet/Web-Scraping-in-Python
 
 # Proves de navegació a una pàgina amb scroll infinit
+profile = webdriver.FirefoxProfile()
+profile.set_preference("general.useragent.override",
+                       "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0")
 driver = webdriver.Firefox()
 driver.get("https://mercatflors.cat/blog/reflexions-entorn-dun-confinament/")
 
