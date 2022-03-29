@@ -63,3 +63,20 @@ for article in soup_body.find_all('article'):
 
 # Prova d'impressió de les dates dels posts
 print(dates)
+
+# Prova d'extracció de les imatges
+print(image)
+
+# Aquesta part del codi crea fitxers independents amb el jpg de la imatge de cada artista
+# Per optimitzar-ho, caldria crear un directori per posar-hi totes les imatges
+# i mirar de posar el nom de l'artista com a títol del jpg (ara surten numerats)
+counter = 0
+
+for i in image:
+    file_name = 'artist' + str(counter) + '.jpg'
+    print(file_name)
+    response = requests.get(i)
+    file = open(file_name, "wb")
+    file.write(response.content)
+    file.close()
+    counter += 1
