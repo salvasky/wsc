@@ -26,8 +26,17 @@ with open('test_mdf_confi.html', 'w') as f:
 # https://medium.com/analytics-vidhya/using-python-and-selenium-to-scrape-infinite-scroll-web-pages-825d12c24ec7
 # https://github.com/LimonSafayet/Web-Scraping-in-Python
 
+# Informació sobre canvi de user-agent de Firefox amb Selenium
+# https://stackoverflow.com/questions/29916054/change-user-agent-for-selenium-web-driver
+
 # Proves de navegació a una pàgina amb scroll infinit
-driver = webdriver.Firefox()
+# driver = webdriver.Firefox()
+# driver.get("https://mercatflors.cat/blog/reflexions-entorn-dun-confinament/")
+
+profile = webdriver.FirefoxProfile()
+profile.set_preference("general.useragent.override",
+                       "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0")
+driver = webdriver.Firefox(profile)
 driver.get("https://mercatflors.cat/blog/reflexions-entorn-dun-confinament/")
 
 last_height = driver.execute_script('return document.body.scrollHeight')
