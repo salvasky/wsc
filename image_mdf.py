@@ -73,6 +73,7 @@ print(titols)
 
 noms = titols
 
+os.mkdir('fotos')
 
 for i in image:
     file_name = str(noms[0]) + '.jpg'
@@ -82,4 +83,5 @@ for i in image:
     file.write(response.content)
     file.close()
     noms.pop(0)
+
 
