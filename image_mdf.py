@@ -69,15 +69,13 @@ for article in soup_body.find_all('article'):
 print(titols)
 
 noms = titols
-# el codi a continuació crea fitxers jpg amb la imatge de cada artista
-# caldria encara fer un directori per emmagatzemar tots els fitxers
 
 
 for i in image:
     file_name = str(noms[0]) + '.jpg'
     print(file_name)
     response = requests.get(i)
-    file = open(file_name, "wb")
+    file = open('fotos/{}'.format(file_name), "wb")
     file.write(response.content)
     file.close()
     noms.pop(0)
