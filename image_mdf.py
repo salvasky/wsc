@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 # from selenium.webdriver.common.keys import Keys
 import time
+import os.path
 
 url = "https://mercatflors.cat/blog"
 url_2 = "https://mercatflors.cat/blog/reflexions-entorn-dun-confinament/"
@@ -27,6 +28,9 @@ with open('test_mdf_confi.html', 'w') as f:
 # https://github.com/LimonSafayet/Web-Scraping-in-Python
 
 # Proves de navegació a una pàgina amb scroll infinit
+profile = webdriver.FirefoxProfile()
+profile.set_preference("general.useragent.override",
+                       "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0")
 driver = webdriver.Firefox()
 driver.get("https://mercatflors.cat/blog/reflexions-entorn-dun-confinament/")
 
@@ -65,19 +69,19 @@ for article in soup_body.find_all('article'):
     image.append(article.find('img')['src'])
 
 # Prova d'impressió de les dates dels posts
-print(image)
+print(titols)
 
-# el codi a continuació crea fitxers jpg amb la imatge de cada artista
-# caldria encara fer un directori per emmagatzemar tots els fitxers
-# i idealment posar el nom de l'artista com a títol del jpg (ara estan numerats)
-counter = 0
+noms = titols
+
+os.mkdir('fotos')
 
 for i in image:
-    file_name = 'artist' + str(counter) + '.jpg'
+    file_name = str(noms[0]) + '.jpg'
     print(file_name)
     response = requests.get(i)
-    file = open(file_name, "wb")
+    file = open('fotos/{}'.format(file_name), "wb")
     file.write(response.content)
     file.close()
-    counter += 1
+    noms.pop(0)
+
 
