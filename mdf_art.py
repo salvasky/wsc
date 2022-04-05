@@ -40,6 +40,8 @@ with open('test_mdf.txt', 'w') as f:
     f.write(art_text)
 
 # [PROVES] Generació d'un cloud tag amb el text extret
+# Ref: https://towardsdatascience.com/simple-wordcloud-in-python-2ae54a9f58e5
+# Ref: https://pypi.org/project/stop-words/
 stop_words = get_stopwords('catalan')
 
 # Generate word cloud
