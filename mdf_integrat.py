@@ -21,7 +21,9 @@ def desa_img(artname, url_file):
 
     # Crear fitxer i escriure-hi el contingut de la imatge
     file_name = artname + '.jpg'
-    print(file_name)
+    # print(file_name)
+    # Repòs de 2 segons per prevenció de bloqueig
+    time.sleep(2)
     response = requests.get(url_file)
     file = open(path + '/{}'.format(file_name), "wb")
     file.write(response.content)
@@ -32,6 +34,9 @@ def desa_img(artname, url_file):
 def extreu_text(url_article):
     # Cadena de caràcters amb el text a tornar
     art_text = ''
+
+    # Repòs de 2 segons per prevenció de bloqueig
+    time.sleep(2)
 
     page_art = requests.get(url_article)
     soup_pga = BeautifulSoup(page_art.content, 'html.parser')
